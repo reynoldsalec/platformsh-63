@@ -1,0 +1,45 @@
+ 
+# The name of this app. Must be unique within a project.
+name: php
+ 
+# The type of the application to build.
+type: php:7.4
+# build:
+#     flavor: compose
+ 
+# The hooks that will be performed when the package is deployed.
+hooks:
+    build: |
+        set -
+ 
+    deploy: |
+        set -
+ 
+# The size of the persistent disk of the application (in MB).
+disk: 25
+ 
+relationships:
+#     db1-endpoint: "mariadb:db1"
+#     db2-endpoint: "mariadb:db2"
+    mariadb: "mariadb:mysql"
+    # mariadb-replica: "mariadb:mysql-replica"
+    # replica: "mariadb:mysql-replica"
+    # db1: "mariadb:db1"
+    # db2: "mariadb:db2"
+    # importer: "mariadb:importer"
+    # reporter: "mariadb:reporter"
+    # foo: "mariadb:foo"
+    # bar: "mariadb:bar"
+    # baz: "mariadb:baz"
+    # boom: "mariadb:boom
+ 
+# The configuration of app when it is exposed to the web.
+web:
+    locations:
+        "/":
+            # The public directory of the app, relative to its root.
+            root: "php"
+            # The front-controller script to send non-static requests to.
+            passthru: "/index.php"
+ 
+ 

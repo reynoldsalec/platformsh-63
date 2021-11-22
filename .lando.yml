@@ -1,0 +1,7 @@
+name: mariadb-test
+recipe: platformsh
+config:
+  webroot: php
+tooling:
+  psysh:
+    service: app
